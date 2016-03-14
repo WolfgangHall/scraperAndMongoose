@@ -44,7 +44,7 @@ app.get('/scrape', function(req, res) {
 
       title = $(this).children('a').attr('title');
 
-      var newTitle = new News(title);
+      var newTitle = new News(JSON.parse(title));
 
       newTitle.save(function(err, doc){
         if (err) {
